@@ -1,0 +1,25 @@
+include mixins.pug
+
+doctype html
+html 
+    head 
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(name="viewport", content="width=device-width", initial-scale="1.0")
+        link(rel="stylesheet", href="/css/style.css")
+        title Pokemons 
+    body 
+        header 
+            h1 Pokemons 
+            h2 Developed by 
+                a(href="https://alex22sv.github.io", target="blank") Alex22sv
+            form(action="/search", method="post", id="new_pokemon_form")
+                input(type="text", name="pokemon", placeholder="Which Pokemon do you want to search?", id="new_pokemon_input", required)  
+                button(type="submit", id="new_pokemon_submit") Submit
+        div(id="main")
+            section(class="pokemon_list")
+                h2 Pokemons
+                div(class="pokemon_list", id="pokemons")
+                    each pokemon in pokemons
+                        +pokemon_card(pokemon)
+    script(src="/js/script.js")
