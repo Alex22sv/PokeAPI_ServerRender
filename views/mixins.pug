@@ -4,7 +4,7 @@ mixin pokemon_card(pokemon)
             img(src=pokemon.img alt="Poke Img")
             input(type="text", id=`pokemon_input_${pokemon.id}`, name="poke", class="text", value=`Name: ${pokemon.name} - ID: ${pokemon.id}`, readonly)
         div(class="actions")
-            form(action=`#`, method="GET")
-                button(class="edit", id=`pokemon_edit_${pokemon.id}`, type="submit", onClick=`toggleEdit(${pokemon.id})`) Edit 
+            //- form(action=`#`, method="GET")
+            //-     button(class="edit", id=`pokemon_edit_${pokemon.id}`, type="submit", onClick=`toggleEdit(${pokemon.id})`) Edit 
             form(action=`delete/${pokemon.id}`, method="POST")
                 button(class="delete", id=`pokemon_delete_${pokemon.id}`, type="submit") Delete
